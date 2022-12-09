@@ -1,0 +1,268 @@
+.main-container {
+    height: 100%;
+    width: 100%;
+    .menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        left: 1rem;
+        top: 0.6rem;
+        line-height: 1;
+        z-index: 20;
+        cursor: pointer;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        line-height: 1;
+        transition-property: all;
+        transition-duration: .3s;
+        transition-delay: 0s;
+        color: #0078e7;
+        text-decoration: none;
+        transition: color .1s;
+        font-size: 24px;
+    }
+    .menu-btn:hover {
+        background-color: rgba(0,120,231,.1);
+    }
+    .sider-bar {
+        position: fixed;
+        overflow-y: auto;
+        top: 0;
+        bottom: 0;
+        left: -22rem;
+        width: 22rem;
+        background-image: url('../../assets/images/sidebar-background.webp');
+        background-color: #fff;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom 1rem center;
+        text-align: center;
+        z-index: 10;
+        transition-property: all;
+        transition-duration: .3s;
+        transition-delay: 0s;
+        padding: 0.5rem;
+        padding-top: 3rem;
+        .site-info {
+            .site-author-avatar {
+                img {
+                    height: 96px;
+                    width: 96px;
+                    border-radius: 50%;
+                    padding: 4px;
+                    background-color: #fff;
+                    box-shadow: 0 0 10px rgba(31, 30, 30, 0.2);;
+                }
+            }
+            .site-author-name {
+                margin: 0.5rem 0 1.8rem;
+                a {
+                    color: #0078e7;
+                    text-decoration: none;
+                    font-size: 1.1rem;
+                }
+            }
+            .site-title {
+                color: #333;
+                font-family: 'Songti SC','Noto Serif SC',STZhongsong,STKaiti,KaiTi,Roboto,serif;
+                font-weight: 900;
+                font-size: 1.2rem;
+            }
+            .site-subtitle {
+                color: #999;
+                margin: 0.8rem 0;
+            }
+            .site-description {
+                color: #555;
+            }
+        }
+    }
+    .sider-bar:hover {
+        box-shadow: 0 0 20px rgba(41, 40, 40, 0.2);
+    }
+    .sider-bar-on {
+        transform: translateX(22rem);
+    }
+    .content-translate-on {
+        padding-left: 22rem;
+    }
+    .sider-bar-off {
+        transform: translateX(0);
+    }
+    .content-translate-off {
+        padding-left: 0;
+    }
+    .main-content {
+        transition-property: all;
+        transition-duration: .3s;
+        transition-delay: 0s;
+        .banner {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .banner-line {
+                --banner-line-height: calc(50vh - 7.79922rem);
+                animation-name: extend-line;
+            }
+            .vertical-line-bottom, .vertical-line-top {
+                display: flex;
+                background-color: #000;
+                width: 1px;
+                height: 0;
+                animation-duration: .4s;
+                animation-fill-mode: forwards;
+                animation-timing-function: ease-in;
+            }
+            .vertical-line-bottom {
+                position: absolute;
+                bottom: 0;
+            }
+            .banner-char-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .char-box {
+                    // --banner-char-size: 2.43005rem;
+                    // --banner-empty-border-size: 30.8828px;
+                    .char {
+                        font-family: 'Songti SC','Noto Serif SC',STZhongsong,STKaiti,KaiTi,Roboto,serif;
+                        font-size: var(--banner-char-size, 1rem);
+                        font-weight: 900;
+                        background-color: rgba(255,255,255,0.5);
+                        line-height: 1;
+                        transition-property: all;
+                        transition-duration: .3s;
+                        transition-delay: 0s;
+                    }
+                }
+                .char-left, .char-right {
+                    display: flex;
+                    color: #000;
+                    opacity: 0;
+                    animation-duration: .4s;
+                    animation-delay: .4s;
+                    animation-fill-mode: forwards;
+                    animation-timing-function: ease-out;
+                }
+                .char-left {
+                    animation-name: char-move-left;
+                    border-left: 1px solid #000;
+                    border-right: 0px solid rgba(0,120,231,.1);
+                    border-right-width: 0;
+                }
+                .char-right {
+                    animation-name: char-move-right;
+                    border-left: 0 solid rgba(0,120,231,.1);
+                    border-right: 1px solid #000;
+                    border-left-width: 0;
+                }
+            }
+            .cloud {
+                display: flex;
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 8;
+                box-sizing: border-box;
+                mix-blend-mode: overlay;
+                .waves {
+                    display: flex;
+                    position: relative;
+                    width: 100%;
+                    height: 100px;
+                }
+                .parallax>use {
+                    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+                }
+    
+                .parallax > use:nth-child(1) {
+                    animation-delay: -2s;
+                    animation-duration: 7s;
+                }
+                .parallax > use:nth-child(2) {
+                    animation-delay: -3s;
+                    animation-duration: 10s;
+                }
+                .parallax > use:nth-child(3) {
+                    animation-delay: -4s;
+                    animation-duration: 13s;
+                }
+                .parallax > use:nth-child(4) {
+                    animation-delay: -5s;
+                    animation-duration: 20s;
+                }
+            }
+            #goDown {
+                display: inline-flex;
+                position: absolute;
+                bottom: 1.2rem;
+                z-index: 9;
+                color: #0078e7;
+                font-size: 2.3rem;
+                cursor: pointer;
+                animation: float 2s ease-in-out infinite;
+            }
+        }
+    }
+}
+
+@keyframes extend-line {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: var(--banner-line-height);
+    }
+}
+
+@keyframes char-move-left {
+    0% {
+        opacity: 0;
+        border-right-width: 0;
+    }
+    100% {
+        opacity: 1;
+        border-right-width: var(--banner-empty-border-size,var(--banner-char-size));
+    }
+}
+
+@keyframes char-move-right {
+    0% {
+        opacity: 0;
+        border-left-width: 0;
+    }
+    100% {
+        opacity: 1;
+        border-left-width: var(--banner-empty-border-size,var(--banner-char-size));
+    }
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px,0,0);
+    }
+    100% {
+        transform: translate3d(85px,0,0);
+    }
+}
+
+@keyframes float {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: .8;
+        transform: translateY(-0.8rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
