@@ -1,0 +1,81 @@
+.article-content-wrapper {
+    padding-left: 20rem;
+    .article-content {
+        width: calc(100% - 32px);
+        margin: 0 16px;
+        box-sizing: border-box;
+        background-color: #fff;
+        padding: 16px;
+        transition: box-shadow .4s;
+        &:hover {
+            box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.1);
+        }
+        .article-content-title {
+            text-align: center;
+            margin-top: 1rem;
+            padding: 0.7rem 1.2rem;
+            font-weight: 900;
+            font-size: 1.6rem;
+            font-family: songti sc,'noto serif sc',STZhongsong,STKaiti,KaiTi,Roboto,serif;
+        }
+        .article-content-time {
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
+            span {
+                margin-left: 4px;
+            }
+        }
+        .article-content-other {
+            display: inline-flex;
+            width: 100%;
+            justify-content: center;
+            margin-bottom: 30px;
+            div {
+                display: inline-flex;
+                span {
+                    display: inline-flex;
+                    // justify-content: center;
+                    // align-items: center;
+                    margin: 0 2px;
+                }
+            }
+            .article-category:hover {
+                color: #006bce;
+            }
+        }
+        .markdown-body {
+            padding: 0 5rem;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .article-footer {
+        margin: 16px;
+    }
+    .nav-menu {
+        width: 21rem;
+        position: fixed;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: #fff;
+        text-align: center;
+        .article-menu {
+            cursor: pointer;
+            text-align: left;
+            padding-left: 16px;
+            .active {
+                color: #0078E7;
+                transition: color .25s;
+            }
+        }
+    }
+}
+// * {
+//     outline: 1px solid red;
+// }
